@@ -21,7 +21,7 @@ class GifCubit extends Cubit<GifState> {
         super(const GifState.init());
 
   List<GifModelBase> allGifs = [];
-  List<GifModelBase> filterGifs = [];
+  List<GifModelBase> searchedGifs = [];
 
   Future<void> getTrendGifs() async {
     try {
@@ -38,8 +38,8 @@ class GifCubit extends Cubit<GifState> {
   Future<void> searchGifs(String query) async {
     try {
       emit(const GifState.loading());
-      filterGifs = await _getSearchGifUseCase(query);
-      emit(GifState.searchedGifs(allGifs));
+      searchedGifs = await _getSearchGifUseCase(query);
+      emit(GifState.searchedGifs(searchedGifs));
     } on DioError catch (e) {
       emit(GifState.error(e.error.toString()));
     } catch (e) {
@@ -47,5 +47,14 @@ class GifCubit extends Cubit<GifState> {
     }
   }
 
-  void searchGif(String value) {}
+  void searchGif(String value) async {
+    if (value.isNotEmpty) {
+      print('XXX  buscando Gifs');
+      await searchGifs(value);
+    } else {
+      print('XXX cargando trends, campo de busqueda vacio');
+      await getTrendGifs();
+      emit(GifState.trendGifs(allGifs));
+    }
+  }
 }

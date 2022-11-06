@@ -32,6 +32,7 @@ class UsersListPageView extends StatefulWidget {
 class _UsersListPageViewState extends State<UsersListPageView> {
   @override
   void initState() {
+    context.read<GifCubit>().getTrendGifs();
     super.initState();
   }
 
@@ -45,26 +46,6 @@ class _UsersListPageViewState extends State<UsersListPageView> {
         ),
         body: BlocConsumer<GifCubit, GifState>(listener: (_, state) {
           state.maybeWhen(
-            trendGifs: (trendGifs) {
-              showDialog(
-                  context: context,
-                  builder: (_) {
-                    return AlertDialog(
-                      title: const Text('Gifs Trend!'),
-                      content: Text(trendGifs.length.toString()),
-                    );
-                  });
-            },
-            searchedGifs: (searchedGifs) {
-              showDialog(
-                  context: context,
-                  builder: (_) {
-                    return AlertDialog(
-                      title: const Text('Gifs encontrados en búsqueda'),
-                      content: Text(searchedGifs.length.toString()),
-                    );
-                  });
-            },
             error: (message) {
               showDialog(
                   context: context,
@@ -78,17 +59,19 @@ class _UsersListPageViewState extends State<UsersListPageView> {
             orElse: () {},
           );
         }, builder: (_, state) {
-          return state.maybeWhen(loading: () {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }, error: (error) {
-            return Center(
-              child: _searchTest(context),
-            );
-          }, orElse: () {
-            return _searchTest(context);
-          });
+          return state.maybeWhen(
+              trendGifs: (trendGifs) {
+                return _body(trendGifs, theme, state);
+              },
+              searchedGifs: (searchedGifs) => _body(searchedGifs, theme, state),
+              error: (error) {
+                return Center(
+                  child: _searchTest(context),
+                );
+              },
+              orElse: () {
+                return _body(context.read<GifCubit>().allGifs, theme, state);
+              });
         }));
   }
 
@@ -105,30 +88,37 @@ class _UsersListPageViewState extends State<UsersListPageView> {
     );
   }
 
-  Widget _body(List<GifAllDataModel> usersList, ThemeData theme) {
+  Widget _body(List<GifModelBase> gifList, ThemeData theme, GifState state) {
+    print('XXX tamaño de lista: ${gifList.length}');
     return Column(
       children: [
         searchField(),
-        if (usersList.isEmpty)
+        if (gifList.isEmpty)
           Container(
               margin: const EdgeInsets.only(top: 30),
               child: Column(
                 children: [
                   Text(
-                    'List is empty',
+                    'Sin resultados',
                     style: theme.textTheme.caption,
                   ),
                   const Icon(Icons.data_array)
                 ],
               ))
         else
-          Expanded(
-            child: ListView.builder(
-                itemCount: usersList.length,
-                itemBuilder: (context, index) {
-                  return Container();
-                }),
-          )
+          state == const GifState.loading()
+              ? Container(
+                  margin: const EdgeInsets.only(top: 200),
+                  child: const CircularProgressIndicator())
+              : Expanded(
+                  child: ListView.builder(
+                      itemCount: gifList.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          child: Text(gifList[index].images!.original!.height!),
+                        );
+                      }),
+                )
       ],
     );
   }
@@ -143,7 +133,9 @@ class _UsersListPageViewState extends State<UsersListPageView> {
           contentPadding: EdgeInsets.all(5),
           hintText: 'Buscar Gif',
         ),
-        onChanged: (value) {},
+        onChanged: (value) {
+          context.read<GifCubit>().searchGif(value);
+        },
       ),
     );
   }
