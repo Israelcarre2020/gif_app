@@ -15,11 +15,11 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$GifsState {
+mixin _$GifState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<GifModel> usersList) trendGifs,
+    required TResult Function(List<GifModelBase> trendGifs) trendGifs,
     required TResult Function() savedPosts,
     required TResult Function() savedUsers,
     required TResult Function() syncFinished,
@@ -29,7 +29,7 @@ mixin _$GifsState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<GifModel> usersList)? trendGifs,
+    TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult? Function()? savedPosts,
     TResult? Function()? savedUsers,
     TResult? Function()? syncFinished,
@@ -39,7 +39,7 @@ mixin _$GifsState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<GifModel> usersList)? trendGifs,
+    TResult Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult Function()? savedPosts,
     TResult Function()? savedUsers,
     TResult Function()? syncFinished,
@@ -81,15 +81,15 @@ mixin _$GifsState {
 }
 
 /// @nodoc
-abstract class $GifsStateCopyWith<$Res> {
-  factory $GifsStateCopyWith(GifState value, $Res Function(GifState) then) =
-      _$GifsStateCopyWithImpl<$Res, GifState>;
+abstract class $GifStateCopyWith<$Res> {
+  factory $GifStateCopyWith(GifState value, $Res Function(GifState) then) =
+      _$GifStateCopyWithImpl<$Res, GifState>;
 }
 
 /// @nodoc
-class _$GifsStateCopyWithImpl<$Res, $Val extends GifState>
-    implements $GifsStateCopyWith<$Res> {
-  _$GifsStateCopyWithImpl(this._value, this._then);
+class _$GifStateCopyWithImpl<$Res, $Val extends GifState>
+    implements $GifStateCopyWith<$Res> {
+  _$GifStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -106,7 +106,7 @@ abstract class _$$_LoadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadingCopyWithImpl<$Res>
-    extends _$GifsStateCopyWithImpl<$Res, _$_Loading>
+    extends _$GifStateCopyWithImpl<$Res, _$_Loading>
     implements _$$_LoadingCopyWith<$Res> {
   __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
       : super(_value, _then);
@@ -119,7 +119,7 @@ class _$_Loading implements _Loading {
 
   @override
   String toString() {
-    return 'GifsState.loading()';
+    return 'GifState.loading()';
   }
 
   @override
@@ -135,7 +135,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<GifModel> usersList) trendGifs,
+    required TResult Function(List<GifModelBase> trendGifs) trendGifs,
     required TResult Function() savedPosts,
     required TResult Function() savedUsers,
     required TResult Function() syncFinished,
@@ -148,7 +148,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<GifModel> usersList)? trendGifs,
+    TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult? Function()? savedPosts,
     TResult? Function()? savedUsers,
     TResult? Function()? syncFinished,
@@ -161,7 +161,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<GifModel> usersList)? trendGifs,
+    TResult Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult Function()? savedPosts,
     TResult Function()? savedUsers,
     TResult Function()? syncFinished,
@@ -228,12 +228,12 @@ abstract class _$$_TrendGifsCopyWith<$Res> {
           _$_TrendGifs value, $Res Function(_$_TrendGifs) then) =
       __$$_TrendGifsCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<GifModel> usersList});
+  $Res call({List<GifModelBase> trendGifs});
 }
 
 /// @nodoc
 class __$$_TrendGifsCopyWithImpl<$Res>
-    extends _$GifsStateCopyWithImpl<$Res, _$_TrendGifs>
+    extends _$GifStateCopyWithImpl<$Res, _$_TrendGifs>
     implements _$$_TrendGifsCopyWith<$Res> {
   __$$_TrendGifsCopyWithImpl(
       _$_TrendGifs _value, $Res Function(_$_TrendGifs) _then)
@@ -242,13 +242,13 @@ class __$$_TrendGifsCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? usersList = null,
+    Object? trendGifs = null,
   }) {
     return _then(_$_TrendGifs(
-      null == usersList
-          ? _value._usersList
-          : usersList // ignore: cast_nullable_to_non_nullable
-              as List<GifModel>,
+      null == trendGifs
+          ? _value._trendGifs
+          : trendGifs // ignore: cast_nullable_to_non_nullable
+              as List<GifModelBase>,
     ));
   }
 }
@@ -256,18 +256,19 @@ class __$$_TrendGifsCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_TrendGifs implements _TrendGifs {
-  const _$_TrendGifs(final List<GifModel> usersList) : _usersList = usersList;
+  const _$_TrendGifs(final List<GifModelBase> trendGifs)
+      : _trendGifs = trendGifs;
 
-  final List<GifModel> _usersList;
+  final List<GifModelBase> _trendGifs;
   @override
-  List<GifModel> get usersList {
+  List<GifModelBase> get trendGifs {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_usersList);
+    return EqualUnmodifiableListView(_trendGifs);
   }
 
   @override
   String toString() {
-    return 'GifsState.trendGifs(usersList: $usersList)';
+    return 'GifState.trendGifs(trendGifs: $trendGifs)';
   }
 
   @override
@@ -276,12 +277,12 @@ class _$_TrendGifs implements _TrendGifs {
         (other.runtimeType == runtimeType &&
             other is _$_TrendGifs &&
             const DeepCollectionEquality()
-                .equals(other._usersList, _usersList));
+                .equals(other._trendGifs, _trendGifs));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_usersList));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_trendGifs));
 
   @JsonKey(ignore: true)
   @override
@@ -293,33 +294,33 @@ class _$_TrendGifs implements _TrendGifs {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<GifModel> usersList) trendGifs,
+    required TResult Function(List<GifModelBase> trendGifs) trendGifs,
     required TResult Function() savedPosts,
     required TResult Function() savedUsers,
     required TResult Function() syncFinished,
     required TResult Function(String message) error,
   }) {
-    return trendGifs(usersList);
+    return trendGifs(this.trendGifs);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<GifModel> usersList)? trendGifs,
+    TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult? Function()? savedPosts,
     TResult? Function()? savedUsers,
     TResult? Function()? syncFinished,
     TResult? Function(String message)? error,
   }) {
-    return trendGifs?.call(usersList);
+    return trendGifs?.call(this.trendGifs);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<GifModel> usersList)? trendGifs,
+    TResult Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult Function()? savedPosts,
     TResult Function()? savedUsers,
     TResult Function()? syncFinished,
@@ -327,7 +328,7 @@ class _$_TrendGifs implements _TrendGifs {
     required TResult orElse(),
   }) {
     if (trendGifs != null) {
-      return trendGifs(usersList);
+      return trendGifs(this.trendGifs);
     }
     return orElse();
   }
@@ -377,9 +378,9 @@ class _$_TrendGifs implements _TrendGifs {
 }
 
 abstract class _TrendGifs implements GifState {
-  const factory _TrendGifs(final List<GifModel> usersList) = _$_TrendGifs;
+  const factory _TrendGifs(final List<GifModelBase> trendGifs) = _$_TrendGifs;
 
-  List<GifModel> get usersList;
+  List<GifModelBase> get trendGifs;
   @JsonKey(ignore: true)
   _$$_TrendGifsCopyWith<_$_TrendGifs> get copyWith =>
       throw _privateConstructorUsedError;
@@ -394,7 +395,7 @@ abstract class _$$_SavedPostsCopyWith<$Res> {
 
 /// @nodoc
 class __$$_SavedPostsCopyWithImpl<$Res>
-    extends _$GifsStateCopyWithImpl<$Res, _$_SavedPosts>
+    extends _$GifStateCopyWithImpl<$Res, _$_SavedPosts>
     implements _$$_SavedPostsCopyWith<$Res> {
   __$$_SavedPostsCopyWithImpl(
       _$_SavedPosts _value, $Res Function(_$_SavedPosts) _then)
@@ -408,7 +409,7 @@ class _$_SavedPosts implements _SavedPosts {
 
   @override
   String toString() {
-    return 'GifsState.savedPosts()';
+    return 'GifState.savedPosts()';
   }
 
   @override
@@ -424,7 +425,7 @@ class _$_SavedPosts implements _SavedPosts {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<GifModel> usersList) trendGifs,
+    required TResult Function(List<GifModelBase> trendGifs) trendGifs,
     required TResult Function() savedPosts,
     required TResult Function() savedUsers,
     required TResult Function() syncFinished,
@@ -437,7 +438,7 @@ class _$_SavedPosts implements _SavedPosts {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<GifModel> usersList)? trendGifs,
+    TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult? Function()? savedPosts,
     TResult? Function()? savedUsers,
     TResult? Function()? syncFinished,
@@ -450,7 +451,7 @@ class _$_SavedPosts implements _SavedPosts {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<GifModel> usersList)? trendGifs,
+    TResult Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult Function()? savedPosts,
     TResult Function()? savedUsers,
     TResult Function()? syncFinished,
@@ -520,7 +521,7 @@ abstract class _$$_SavedUsersCopyWith<$Res> {
 
 /// @nodoc
 class __$$_SavedUsersCopyWithImpl<$Res>
-    extends _$GifsStateCopyWithImpl<$Res, _$_SavedUsers>
+    extends _$GifStateCopyWithImpl<$Res, _$_SavedUsers>
     implements _$$_SavedUsersCopyWith<$Res> {
   __$$_SavedUsersCopyWithImpl(
       _$_SavedUsers _value, $Res Function(_$_SavedUsers) _then)
@@ -534,7 +535,7 @@ class _$_SavedUsers implements _SavedUsers {
 
   @override
   String toString() {
-    return 'GifsState.savedUsers()';
+    return 'GifState.savedUsers()';
   }
 
   @override
@@ -550,7 +551,7 @@ class _$_SavedUsers implements _SavedUsers {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<GifModel> usersList) trendGifs,
+    required TResult Function(List<GifModelBase> trendGifs) trendGifs,
     required TResult Function() savedPosts,
     required TResult Function() savedUsers,
     required TResult Function() syncFinished,
@@ -563,7 +564,7 @@ class _$_SavedUsers implements _SavedUsers {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<GifModel> usersList)? trendGifs,
+    TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult? Function()? savedPosts,
     TResult? Function()? savedUsers,
     TResult? Function()? syncFinished,
@@ -576,7 +577,7 @@ class _$_SavedUsers implements _SavedUsers {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<GifModel> usersList)? trendGifs,
+    TResult Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult Function()? savedPosts,
     TResult Function()? savedUsers,
     TResult Function()? syncFinished,
@@ -646,7 +647,7 @@ abstract class _$$_SyncFinishedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_SyncFinishedCopyWithImpl<$Res>
-    extends _$GifsStateCopyWithImpl<$Res, _$_SyncFinished>
+    extends _$GifStateCopyWithImpl<$Res, _$_SyncFinished>
     implements _$$_SyncFinishedCopyWith<$Res> {
   __$$_SyncFinishedCopyWithImpl(
       _$_SyncFinished _value, $Res Function(_$_SyncFinished) _then)
@@ -660,7 +661,7 @@ class _$_SyncFinished implements _SyncFinished {
 
   @override
   String toString() {
-    return 'GifsState.syncFinished()';
+    return 'GifState.syncFinished()';
   }
 
   @override
@@ -676,7 +677,7 @@ class _$_SyncFinished implements _SyncFinished {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<GifModel> usersList) trendGifs,
+    required TResult Function(List<GifModelBase> trendGifs) trendGifs,
     required TResult Function() savedPosts,
     required TResult Function() savedUsers,
     required TResult Function() syncFinished,
@@ -689,7 +690,7 @@ class _$_SyncFinished implements _SyncFinished {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<GifModel> usersList)? trendGifs,
+    TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult? Function()? savedPosts,
     TResult? Function()? savedUsers,
     TResult? Function()? syncFinished,
@@ -702,7 +703,7 @@ class _$_SyncFinished implements _SyncFinished {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<GifModel> usersList)? trendGifs,
+    TResult Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult Function()? savedPosts,
     TResult Function()? savedUsers,
     TResult Function()? syncFinished,
@@ -773,7 +774,7 @@ abstract class _$$_ErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ErrorCopyWithImpl<$Res>
-    extends _$GifsStateCopyWithImpl<$Res, _$_Error>
+    extends _$GifStateCopyWithImpl<$Res, _$_Error>
     implements _$$_ErrorCopyWith<$Res> {
   __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
       : super(_value, _then);
@@ -802,7 +803,7 @@ class _$_Error implements _Error {
 
   @override
   String toString() {
-    return 'GifsState.error(message: $message)';
+    return 'GifState.error(message: $message)';
   }
 
   @override
@@ -826,7 +827,7 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<GifModel> usersList) trendGifs,
+    required TResult Function(List<GifModelBase> trendGifs) trendGifs,
     required TResult Function() savedPosts,
     required TResult Function() savedUsers,
     required TResult Function() syncFinished,
@@ -839,7 +840,7 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<GifModel> usersList)? trendGifs,
+    TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult? Function()? savedPosts,
     TResult? Function()? savedUsers,
     TResult? Function()? syncFinished,
@@ -852,7 +853,7 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<GifModel> usersList)? trendGifs,
+    TResult Function(List<GifModelBase> trendGifs)? trendGifs,
     TResult Function()? savedPosts,
     TResult Function()? savedUsers,
     TResult Function()? syncFinished,

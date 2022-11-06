@@ -14,12 +14,12 @@ class GifCubit extends Cubit<GifState> {
   GifCubit({
     required GetGifsUseCase getAllPostsUseCase,
   })  : _getGisUseCase = getAllPostsUseCase,
-        super(const GifState.loading());
+        super(const GifState.syncFinished());
 
-  List<GifModel> allGifs = [];
-  List<GifModel> filterGifs = [];
+  List<GifModelBase> allGifs = [];
+  List<GifModelBase> filterGifs = [];
 
-  Future<void> getAllRemoteUsers() async {
+  Future<void> getTrendGifs() async {
     try {
       emit(const GifState.loading());
       allGifs = await _getGisUseCase(null);

@@ -19,7 +19,8 @@ abstract class GifsDependencyInjector {
 
     DIManager.getIt.registerSingleton(GifsRemoteDatasource(
       DIManager.getIt<HttpImpl>(),
-      RemoteApiConstants.getAllUsersEndpoint,
+      RemoteApiConstants.getTrendGifs,
+      RemoteApiConstants.apiKeyGiphy,
     ));
 
     DIManager.getIt.registerSingleton<GifsDataContract>(
