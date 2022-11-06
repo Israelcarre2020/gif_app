@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -47,14 +49,14 @@ class GifCubit extends Cubit<GifState> {
     }
   }
 
-  void searchGif(String value) async {
-    if (value.isNotEmpty) {
-      print('XXX  buscando Gifs');
-      await searchGifs(value);
-    } else {
-      print('XXX cargando trends, campo de busqueda vacio');
-      await getTrendGifs();
-      emit(GifState.trendGifs(allGifs));
-    }
+  Future<void> searchGif(String value) async {
+    Timer(const Duration(seconds: 1), () async {
+      if (value.isNotEmpty) {
+        await searchGifs(value);
+      } else {
+        await getTrendGifs();
+        emit(GifState.trendGifs(allGifs));
+      }
+    });
   }
 }

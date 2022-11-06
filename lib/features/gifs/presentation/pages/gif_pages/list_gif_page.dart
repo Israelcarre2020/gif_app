@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../../../../core/di_manager/di_manager.dart';
 import '../../../domain/entities/gif_model.dart';
@@ -39,9 +40,13 @@ class _UsersListPageViewState extends State<UsersListPageView> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final size = MediaQuery.of(context).size;
+    final width = size.width;
+    final height = size.height;
+
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Usuarios'),
+          title: const Text('Gif App'),
           centerTitle: true,
         ),
         body: BlocConsumer<GifCubit, GifState>(listener: (_, state) {
@@ -61,35 +66,35 @@ class _UsersListPageViewState extends State<UsersListPageView> {
         }, builder: (_, state) {
           return state.maybeWhen(
               trendGifs: (trendGifs) {
-                return _body(trendGifs, theme, state);
+                return _body(trendGifs, theme, state, height, width);
               },
-              searchedGifs: (searchedGifs) => _body(searchedGifs, theme, state),
+              searchedGifs: (searchedGifs) =>
+                  _body(searchedGifs, theme, state, height, width),
               error: (error) {
                 return Center(
                   child: _searchTest(context),
                 );
               },
               orElse: () {
-                return _body(context.read<GifCubit>().allGifs, theme, state);
+                return _body(context.read<GifCubit>().allGifs, theme, state,
+                    height, width);
               });
         }));
   }
 
   Widget _searchTest(BuildContext context) {
-    return Column(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         TextButton(
             onPressed: () => context.read<GifCubit>().getTrendGifs(),
-            child: Text('Buscar Trend Gifs')),
-        TextButton(
-            onPressed: () => context.read<GifCubit>().searchGifs('dog'),
-            child: Text('Buscar específico')),
+            child: const Text('Cargar nuevamente')),
       ],
     );
   }
 
-  Widget _body(List<GifModelBase> gifList, ThemeData theme, GifState state) {
-    print('XXX tamaño de lista: ${gifList.length}');
+  Widget _body(List<GifModelBase> gifList, ThemeData theme, GifState state,
+      double height, double width) {
     return Column(
       children: [
         searchField(),
@@ -111,15 +116,30 @@ class _UsersListPageViewState extends State<UsersListPageView> {
                   margin: const EdgeInsets.only(top: 200),
                   child: const CircularProgressIndicator())
               : Expanded(
-                  child: ListView.builder(
-                      itemCount: gifList.length,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          child: Text(gifList[index].images!.original!.height!),
-                        );
-                      }),
-                )
+                  child: SingleChildScrollView(
+                    child: StaggeredGrid.count(
+                      crossAxisCount: 2,
+                      children:
+                          gifList.map((e) => cajita(height, width, e)).toList(),
+                    ),
+                  ),
+                ),
       ],
+    );
+  }
+
+  Widget cajita(double height, double width, GifModelBase gif) {
+    return Padding(
+      padding: const EdgeInsets.all(7),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: FadeInImage.assetNetwork(
+            width: width * 0.4,
+            height: double.parse(gif.images!.original!.height!),
+            fit: BoxFit.cover,
+            placeholder: 'assets/images/loading.gif',
+            image: gif.images!.original!.url!),
+      ),
     );
   }
 
