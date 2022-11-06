@@ -8,7 +8,12 @@ class GifsImplRepository implements GifsDataContract {
   GifsImplRepository(this._getDataUsersRemoteDatasource);
 
   @override
-  Future<List<GifModelBase>> getGifs() async {
-    return _getDataUsersRemoteDatasource.getGifs();
+  Future<List<GifModelBase>> getTrendGifs() async {
+    return _getDataUsersRemoteDatasource.getTrendGifs();
+  }
+
+  @override
+  Future<List<GifModelBase>> getSearchGifs(String query) {
+    return _getDataUsersRemoteDatasource.getSearchGifs(query);
   }
 }

@@ -19,30 +19,27 @@ mixin _$GifState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
+    required TResult Function() init,
     required TResult Function(List<GifModelBase> trendGifs) trendGifs,
-    required TResult Function() savedPosts,
-    required TResult Function() savedUsers,
-    required TResult Function() syncFinished,
+    required TResult Function(List<GifModelBase> searchedGifs) searchedGifs,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
+    TResult? Function()? init,
     TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult? Function()? savedPosts,
-    TResult? Function()? savedUsers,
-    TResult? Function()? syncFinished,
+    TResult? Function(List<GifModelBase> searchedGifs)? searchedGifs,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
+    TResult Function()? init,
     TResult Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult Function()? savedPosts,
-    TResult Function()? savedUsers,
-    TResult Function()? syncFinished,
+    TResult Function(List<GifModelBase> searchedGifs)? searchedGifs,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -50,30 +47,27 @@ mixin _$GifState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Init value) init,
     required TResult Function(_TrendGifs value) trendGifs,
-    required TResult Function(_SavedPosts value) savedPosts,
-    required TResult Function(_SavedUsers value) savedUsers,
-    required TResult Function(_SyncFinished value) syncFinished,
+    required TResult Function(_SearchedGifs value) searchedGifs,
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Init value)? init,
     TResult? Function(_TrendGifs value)? trendGifs,
-    TResult? Function(_SavedPosts value)? savedPosts,
-    TResult? Function(_SavedUsers value)? savedUsers,
-    TResult? Function(_SyncFinished value)? syncFinished,
+    TResult? Function(_SearchedGifs value)? searchedGifs,
     TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
+    TResult Function(_Init value)? init,
     TResult Function(_TrendGifs value)? trendGifs,
-    TResult Function(_SavedPosts value)? savedPosts,
-    TResult Function(_SavedUsers value)? savedUsers,
-    TResult Function(_SyncFinished value)? syncFinished,
+    TResult Function(_SearchedGifs value)? searchedGifs,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
@@ -135,10 +129,9 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
+    required TResult Function() init,
     required TResult Function(List<GifModelBase> trendGifs) trendGifs,
-    required TResult Function() savedPosts,
-    required TResult Function() savedUsers,
-    required TResult Function() syncFinished,
+    required TResult Function(List<GifModelBase> searchedGifs) searchedGifs,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -148,10 +141,9 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
+    TResult? Function()? init,
     TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult? Function()? savedPosts,
-    TResult? Function()? savedUsers,
-    TResult? Function()? syncFinished,
+    TResult? Function(List<GifModelBase> searchedGifs)? searchedGifs,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -161,10 +153,9 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
+    TResult Function()? init,
     TResult Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult Function()? savedPosts,
-    TResult Function()? savedUsers,
-    TResult Function()? syncFinished,
+    TResult Function(List<GifModelBase> searchedGifs)? searchedGifs,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -178,10 +169,9 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Init value) init,
     required TResult Function(_TrendGifs value) trendGifs,
-    required TResult Function(_SavedPosts value) savedPosts,
-    required TResult Function(_SavedUsers value) savedUsers,
-    required TResult Function(_SyncFinished value) syncFinished,
+    required TResult Function(_SearchedGifs value) searchedGifs,
     required TResult Function(_Error value) error,
   }) {
     return loading(this);
@@ -191,10 +181,9 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Init value)? init,
     TResult? Function(_TrendGifs value)? trendGifs,
-    TResult? Function(_SavedPosts value)? savedPosts,
-    TResult? Function(_SavedUsers value)? savedUsers,
-    TResult? Function(_SyncFinished value)? syncFinished,
+    TResult? Function(_SearchedGifs value)? searchedGifs,
     TResult? Function(_Error value)? error,
   }) {
     return loading?.call(this);
@@ -204,10 +193,9 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
+    TResult Function(_Init value)? init,
     TResult Function(_TrendGifs value)? trendGifs,
-    TResult Function(_SavedPosts value)? savedPosts,
-    TResult Function(_SavedUsers value)? savedUsers,
-    TResult Function(_SyncFinished value)? syncFinished,
+    TResult Function(_SearchedGifs value)? searchedGifs,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -220,6 +208,123 @@ class _$_Loading implements _Loading {
 
 abstract class _Loading implements GifState {
   const factory _Loading() = _$_Loading;
+}
+
+/// @nodoc
+abstract class _$$_InitCopyWith<$Res> {
+  factory _$$_InitCopyWith(_$_Init value, $Res Function(_$_Init) then) =
+      __$$_InitCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_InitCopyWithImpl<$Res> extends _$GifStateCopyWithImpl<$Res, _$_Init>
+    implements _$$_InitCopyWith<$Res> {
+  __$$_InitCopyWithImpl(_$_Init _value, $Res Function(_$_Init) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_Init implements _Init {
+  const _$_Init();
+
+  @override
+  String toString() {
+    return 'GifState.init()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Init);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function() init,
+    required TResult Function(List<GifModelBase> trendGifs) trendGifs,
+    required TResult Function(List<GifModelBase> searchedGifs) searchedGifs,
+    required TResult Function(String message) error,
+  }) {
+    return init();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function()? init,
+    TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
+    TResult? Function(List<GifModelBase> searchedGifs)? searchedGifs,
+    TResult? Function(String message)? error,
+  }) {
+    return init?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function()? init,
+    TResult Function(List<GifModelBase> trendGifs)? trendGifs,
+    TResult Function(List<GifModelBase> searchedGifs)? searchedGifs,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (init != null) {
+      return init();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Init value) init,
+    required TResult Function(_TrendGifs value) trendGifs,
+    required TResult Function(_SearchedGifs value) searchedGifs,
+    required TResult Function(_Error value) error,
+  }) {
+    return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Init value)? init,
+    TResult? Function(_TrendGifs value)? trendGifs,
+    TResult? Function(_SearchedGifs value)? searchedGifs,
+    TResult? Function(_Error value)? error,
+  }) {
+    return init?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Init value)? init,
+    TResult Function(_TrendGifs value)? trendGifs,
+    TResult Function(_SearchedGifs value)? searchedGifs,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (init != null) {
+      return init(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Init implements GifState {
+  const factory _Init() = _$_Init;
 }
 
 /// @nodoc
@@ -294,10 +399,9 @@ class _$_TrendGifs implements _TrendGifs {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
+    required TResult Function() init,
     required TResult Function(List<GifModelBase> trendGifs) trendGifs,
-    required TResult Function() savedPosts,
-    required TResult Function() savedUsers,
-    required TResult Function() syncFinished,
+    required TResult Function(List<GifModelBase> searchedGifs) searchedGifs,
     required TResult Function(String message) error,
   }) {
     return trendGifs(this.trendGifs);
@@ -307,10 +411,9 @@ class _$_TrendGifs implements _TrendGifs {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
+    TResult? Function()? init,
     TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult? Function()? savedPosts,
-    TResult? Function()? savedUsers,
-    TResult? Function()? syncFinished,
+    TResult? Function(List<GifModelBase> searchedGifs)? searchedGifs,
     TResult? Function(String message)? error,
   }) {
     return trendGifs?.call(this.trendGifs);
@@ -320,10 +423,9 @@ class _$_TrendGifs implements _TrendGifs {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
+    TResult Function()? init,
     TResult Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult Function()? savedPosts,
-    TResult Function()? savedUsers,
-    TResult Function()? syncFinished,
+    TResult Function(List<GifModelBase> searchedGifs)? searchedGifs,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -337,10 +439,9 @@ class _$_TrendGifs implements _TrendGifs {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Init value) init,
     required TResult Function(_TrendGifs value) trendGifs,
-    required TResult Function(_SavedPosts value) savedPosts,
-    required TResult Function(_SavedUsers value) savedUsers,
-    required TResult Function(_SyncFinished value) syncFinished,
+    required TResult Function(_SearchedGifs value) searchedGifs,
     required TResult Function(_Error value) error,
   }) {
     return trendGifs(this);
@@ -350,10 +451,9 @@ class _$_TrendGifs implements _TrendGifs {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Init value)? init,
     TResult? Function(_TrendGifs value)? trendGifs,
-    TResult? Function(_SavedPosts value)? savedPosts,
-    TResult? Function(_SavedUsers value)? savedUsers,
-    TResult? Function(_SyncFinished value)? syncFinished,
+    TResult? Function(_SearchedGifs value)? searchedGifs,
     TResult? Function(_Error value)? error,
   }) {
     return trendGifs?.call(this);
@@ -363,10 +463,9 @@ class _$_TrendGifs implements _TrendGifs {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
+    TResult Function(_Init value)? init,
     TResult Function(_TrendGifs value)? trendGifs,
-    TResult Function(_SavedPosts value)? savedPosts,
-    TResult Function(_SavedUsers value)? savedUsers,
-    TResult Function(_SyncFinished value)? syncFinished,
+    TResult Function(_SearchedGifs value)? searchedGifs,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -387,79 +486,109 @@ abstract class _TrendGifs implements GifState {
 }
 
 /// @nodoc
-abstract class _$$_SavedPostsCopyWith<$Res> {
-  factory _$$_SavedPostsCopyWith(
-          _$_SavedPosts value, $Res Function(_$_SavedPosts) then) =
-      __$$_SavedPostsCopyWithImpl<$Res>;
+abstract class _$$_SearchedGifsCopyWith<$Res> {
+  factory _$$_SearchedGifsCopyWith(
+          _$_SearchedGifs value, $Res Function(_$_SearchedGifs) then) =
+      __$$_SearchedGifsCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<GifModelBase> searchedGifs});
 }
 
 /// @nodoc
-class __$$_SavedPostsCopyWithImpl<$Res>
-    extends _$GifStateCopyWithImpl<$Res, _$_SavedPosts>
-    implements _$$_SavedPostsCopyWith<$Res> {
-  __$$_SavedPostsCopyWithImpl(
-      _$_SavedPosts _value, $Res Function(_$_SavedPosts) _then)
+class __$$_SearchedGifsCopyWithImpl<$Res>
+    extends _$GifStateCopyWithImpl<$Res, _$_SearchedGifs>
+    implements _$$_SearchedGifsCopyWith<$Res> {
+  __$$_SearchedGifsCopyWithImpl(
+      _$_SearchedGifs _value, $Res Function(_$_SearchedGifs) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? searchedGifs = null,
+  }) {
+    return _then(_$_SearchedGifs(
+      null == searchedGifs
+          ? _value._searchedGifs
+          : searchedGifs // ignore: cast_nullable_to_non_nullable
+              as List<GifModelBase>,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_SavedPosts implements _SavedPosts {
-  const _$_SavedPosts();
+class _$_SearchedGifs implements _SearchedGifs {
+  const _$_SearchedGifs(final List<GifModelBase> searchedGifs)
+      : _searchedGifs = searchedGifs;
+
+  final List<GifModelBase> _searchedGifs;
+  @override
+  List<GifModelBase> get searchedGifs {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_searchedGifs);
+  }
 
   @override
   String toString() {
-    return 'GifState.savedPosts()';
+    return 'GifState.searchedGifs(searchedGifs: $searchedGifs)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SavedPosts);
+        (other.runtimeType == runtimeType &&
+            other is _$_SearchedGifs &&
+            const DeepCollectionEquality()
+                .equals(other._searchedGifs, _searchedGifs));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_searchedGifs));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SearchedGifsCopyWith<_$_SearchedGifs> get copyWith =>
+      __$$_SearchedGifsCopyWithImpl<_$_SearchedGifs>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
+    required TResult Function() init,
     required TResult Function(List<GifModelBase> trendGifs) trendGifs,
-    required TResult Function() savedPosts,
-    required TResult Function() savedUsers,
-    required TResult Function() syncFinished,
+    required TResult Function(List<GifModelBase> searchedGifs) searchedGifs,
     required TResult Function(String message) error,
   }) {
-    return savedPosts();
+    return searchedGifs(this.searchedGifs);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
+    TResult? Function()? init,
     TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult? Function()? savedPosts,
-    TResult? Function()? savedUsers,
-    TResult? Function()? syncFinished,
+    TResult? Function(List<GifModelBase> searchedGifs)? searchedGifs,
     TResult? Function(String message)? error,
   }) {
-    return savedPosts?.call();
+    return searchedGifs?.call(this.searchedGifs);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
+    TResult Function()? init,
     TResult Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult Function()? savedPosts,
-    TResult Function()? savedUsers,
-    TResult Function()? syncFinished,
+    TResult Function(List<GifModelBase> searchedGifs)? searchedGifs,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
-    if (savedPosts != null) {
-      return savedPosts();
+    if (searchedGifs != null) {
+      return searchedGifs(this.searchedGifs);
     }
     return orElse();
   }
@@ -468,300 +597,51 @@ class _$_SavedPosts implements _SavedPosts {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Init value) init,
     required TResult Function(_TrendGifs value) trendGifs,
-    required TResult Function(_SavedPosts value) savedPosts,
-    required TResult Function(_SavedUsers value) savedUsers,
-    required TResult Function(_SyncFinished value) syncFinished,
+    required TResult Function(_SearchedGifs value) searchedGifs,
     required TResult Function(_Error value) error,
   }) {
-    return savedPosts(this);
+    return searchedGifs(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Init value)? init,
     TResult? Function(_TrendGifs value)? trendGifs,
-    TResult? Function(_SavedPosts value)? savedPosts,
-    TResult? Function(_SavedUsers value)? savedUsers,
-    TResult? Function(_SyncFinished value)? syncFinished,
+    TResult? Function(_SearchedGifs value)? searchedGifs,
     TResult? Function(_Error value)? error,
   }) {
-    return savedPosts?.call(this);
+    return searchedGifs?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
+    TResult Function(_Init value)? init,
     TResult Function(_TrendGifs value)? trendGifs,
-    TResult Function(_SavedPosts value)? savedPosts,
-    TResult Function(_SavedUsers value)? savedUsers,
-    TResult Function(_SyncFinished value)? syncFinished,
+    TResult Function(_SearchedGifs value)? searchedGifs,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
-    if (savedPosts != null) {
-      return savedPosts(this);
+    if (searchedGifs != null) {
+      return searchedGifs(this);
     }
     return orElse();
   }
 }
 
-abstract class _SavedPosts implements GifState {
-  const factory _SavedPosts() = _$_SavedPosts;
-}
+abstract class _SearchedGifs implements GifState {
+  const factory _SearchedGifs(final List<GifModelBase> searchedGifs) =
+      _$_SearchedGifs;
 
-/// @nodoc
-abstract class _$$_SavedUsersCopyWith<$Res> {
-  factory _$$_SavedUsersCopyWith(
-          _$_SavedUsers value, $Res Function(_$_SavedUsers) then) =
-      __$$_SavedUsersCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_SavedUsersCopyWithImpl<$Res>
-    extends _$GifStateCopyWithImpl<$Res, _$_SavedUsers>
-    implements _$$_SavedUsersCopyWith<$Res> {
-  __$$_SavedUsersCopyWithImpl(
-      _$_SavedUsers _value, $Res Function(_$_SavedUsers) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_SavedUsers implements _SavedUsers {
-  const _$_SavedUsers();
-
-  @override
-  String toString() {
-    return 'GifState.savedUsers()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SavedUsers);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loading,
-    required TResult Function(List<GifModelBase> trendGifs) trendGifs,
-    required TResult Function() savedPosts,
-    required TResult Function() savedUsers,
-    required TResult Function() syncFinished,
-    required TResult Function(String message) error,
-  }) {
-    return savedUsers();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loading,
-    TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult? Function()? savedPosts,
-    TResult? Function()? savedUsers,
-    TResult? Function()? syncFinished,
-    TResult? Function(String message)? error,
-  }) {
-    return savedUsers?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult Function()? savedPosts,
-    TResult Function()? savedUsers,
-    TResult Function()? syncFinished,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (savedUsers != null) {
-      return savedUsers();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_TrendGifs value) trendGifs,
-    required TResult Function(_SavedPosts value) savedPosts,
-    required TResult Function(_SavedUsers value) savedUsers,
-    required TResult Function(_SyncFinished value) syncFinished,
-    required TResult Function(_Error value) error,
-  }) {
-    return savedUsers(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_TrendGifs value)? trendGifs,
-    TResult? Function(_SavedPosts value)? savedPosts,
-    TResult? Function(_SavedUsers value)? savedUsers,
-    TResult? Function(_SyncFinished value)? syncFinished,
-    TResult? Function(_Error value)? error,
-  }) {
-    return savedUsers?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_TrendGifs value)? trendGifs,
-    TResult Function(_SavedPosts value)? savedPosts,
-    TResult Function(_SavedUsers value)? savedUsers,
-    TResult Function(_SyncFinished value)? syncFinished,
-    TResult Function(_Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (savedUsers != null) {
-      return savedUsers(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SavedUsers implements GifState {
-  const factory _SavedUsers() = _$_SavedUsers;
-}
-
-/// @nodoc
-abstract class _$$_SyncFinishedCopyWith<$Res> {
-  factory _$$_SyncFinishedCopyWith(
-          _$_SyncFinished value, $Res Function(_$_SyncFinished) then) =
-      __$$_SyncFinishedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_SyncFinishedCopyWithImpl<$Res>
-    extends _$GifStateCopyWithImpl<$Res, _$_SyncFinished>
-    implements _$$_SyncFinishedCopyWith<$Res> {
-  __$$_SyncFinishedCopyWithImpl(
-      _$_SyncFinished _value, $Res Function(_$_SyncFinished) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_SyncFinished implements _SyncFinished {
-  const _$_SyncFinished();
-
-  @override
-  String toString() {
-    return 'GifState.syncFinished()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SyncFinished);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loading,
-    required TResult Function(List<GifModelBase> trendGifs) trendGifs,
-    required TResult Function() savedPosts,
-    required TResult Function() savedUsers,
-    required TResult Function() syncFinished,
-    required TResult Function(String message) error,
-  }) {
-    return syncFinished();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loading,
-    TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult? Function()? savedPosts,
-    TResult? Function()? savedUsers,
-    TResult? Function()? syncFinished,
-    TResult? Function(String message)? error,
-  }) {
-    return syncFinished?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult Function()? savedPosts,
-    TResult Function()? savedUsers,
-    TResult Function()? syncFinished,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (syncFinished != null) {
-      return syncFinished();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_TrendGifs value) trendGifs,
-    required TResult Function(_SavedPosts value) savedPosts,
-    required TResult Function(_SavedUsers value) savedUsers,
-    required TResult Function(_SyncFinished value) syncFinished,
-    required TResult Function(_Error value) error,
-  }) {
-    return syncFinished(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_TrendGifs value)? trendGifs,
-    TResult? Function(_SavedPosts value)? savedPosts,
-    TResult? Function(_SavedUsers value)? savedUsers,
-    TResult? Function(_SyncFinished value)? syncFinished,
-    TResult? Function(_Error value)? error,
-  }) {
-    return syncFinished?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_TrendGifs value)? trendGifs,
-    TResult Function(_SavedPosts value)? savedPosts,
-    TResult Function(_SavedUsers value)? savedUsers,
-    TResult Function(_SyncFinished value)? syncFinished,
-    TResult Function(_Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (syncFinished != null) {
-      return syncFinished(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SyncFinished implements GifState {
-  const factory _SyncFinished() = _$_SyncFinished;
+  List<GifModelBase> get searchedGifs;
+  @JsonKey(ignore: true)
+  _$$_SearchedGifsCopyWith<_$_SearchedGifs> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -827,10 +707,9 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
+    required TResult Function() init,
     required TResult Function(List<GifModelBase> trendGifs) trendGifs,
-    required TResult Function() savedPosts,
-    required TResult Function() savedUsers,
-    required TResult Function() syncFinished,
+    required TResult Function(List<GifModelBase> searchedGifs) searchedGifs,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -840,10 +719,9 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
+    TResult? Function()? init,
     TResult? Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult? Function()? savedPosts,
-    TResult? Function()? savedUsers,
-    TResult? Function()? syncFinished,
+    TResult? Function(List<GifModelBase> searchedGifs)? searchedGifs,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -853,10 +731,9 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
+    TResult Function()? init,
     TResult Function(List<GifModelBase> trendGifs)? trendGifs,
-    TResult Function()? savedPosts,
-    TResult Function()? savedUsers,
-    TResult Function()? syncFinished,
+    TResult Function(List<GifModelBase> searchedGifs)? searchedGifs,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -870,10 +747,9 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Init value) init,
     required TResult Function(_TrendGifs value) trendGifs,
-    required TResult Function(_SavedPosts value) savedPosts,
-    required TResult Function(_SavedUsers value) savedUsers,
-    required TResult Function(_SyncFinished value) syncFinished,
+    required TResult Function(_SearchedGifs value) searchedGifs,
     required TResult Function(_Error value) error,
   }) {
     return error(this);
@@ -883,10 +759,9 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Init value)? init,
     TResult? Function(_TrendGifs value)? trendGifs,
-    TResult? Function(_SavedPosts value)? savedPosts,
-    TResult? Function(_SavedUsers value)? savedUsers,
-    TResult? Function(_SyncFinished value)? syncFinished,
+    TResult? Function(_SearchedGifs value)? searchedGifs,
     TResult? Function(_Error value)? error,
   }) {
     return error?.call(this);
@@ -896,10 +771,9 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
+    TResult Function(_Init value)? init,
     TResult Function(_TrendGifs value)? trendGifs,
-    TResult Function(_SavedPosts value)? savedPosts,
-    TResult Function(_SavedUsers value)? savedUsers,
-    TResult Function(_SyncFinished value)? syncFinished,
+    TResult Function(_SearchedGifs value)? searchedGifs,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {

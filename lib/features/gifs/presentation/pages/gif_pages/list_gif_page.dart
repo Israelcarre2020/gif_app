@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/di_manager/di_manager.dart';
 import '../../../domain/entities/gif_model.dart';
-import '../../../domain/use_cases/get_gifs_use_case.dart';
+import '../../../domain/use_cases/get_search_gifs_use_case.dart';
+import '../../../domain/use_cases/get_trend_gifs_use_case.dart';
 import '../../manager/gifs_cubit/users_cubit.dart';
 
 class ListGifPage extends StatelessWidget {
@@ -13,7 +14,8 @@ class ListGifPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GifCubit(
-        getAllPostsUseCase: DIManager.getIt<GetGifsUseCase>(),
+        getAllPostsUseCase: DIManager.getIt<GetTrendGifsUseCase>(),
+        getSearchGifUseCase: DIManager.getIt<GetSearchGifUseCase>(),
       ),
       child: const UsersListPageView(),
     );
@@ -43,6 +45,26 @@ class _UsersListPageViewState extends State<UsersListPageView> {
         ),
         body: BlocConsumer<GifCubit, GifState>(listener: (_, state) {
           state.maybeWhen(
+            trendGifs: (trendGifs) {
+              showDialog(
+                  context: context,
+                  builder: (_) {
+                    return AlertDialog(
+                      title: const Text('Gifs Trend!'),
+                      content: Text(trendGifs.length.toString()),
+                    );
+                  });
+            },
+            searchedGifs: (searchedGifs) {
+              showDialog(
+                  context: context,
+                  builder: (_) {
+                    return AlertDialog(
+                      title: const Text('Gifs encontrados en búsqueda'),
+                      content: Text(searchedGifs.length.toString()),
+                    );
+                  });
+            },
             error: (message) {
               showDialog(
                   context: context,
@@ -71,9 +93,16 @@ class _UsersListPageViewState extends State<UsersListPageView> {
   }
 
   Widget _searchTest(BuildContext context) {
-    return TextButton(
-        onPressed: () => context.read<GifCubit>().getTrendGifs(),
-        child: Text('Buscar Trend Gifs'));
+    return Column(
+      children: [
+        TextButton(
+            onPressed: () => context.read<GifCubit>().getTrendGifs(),
+            child: Text('Buscar Trend Gifs')),
+        TextButton(
+            onPressed: () => context.read<GifCubit>().searchGifs('dog'),
+            child: Text('Buscar específico')),
+      ],
+    );
   }
 
   Widget _body(List<GifAllDataModel> usersList, ThemeData theme) {

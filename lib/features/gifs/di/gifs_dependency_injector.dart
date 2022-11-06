@@ -4,7 +4,8 @@ import '../../../core/http/data/http_proxy_impl.dart';
 import '../data/data_source/gifs_remote_data_source.dart';
 import '../data/repositories/gifs_impl_repository.dart';
 import '../domain/repositories/get_data_gifs_contract.dart';
-import '../domain/use_cases/get_gifs_use_case.dart';
+import '../domain/use_cases/get_search_gifs_use_case.dart';
+import '../domain/use_cases/get_trend_gifs_use_case.dart';
 import '../presentation/manager/gifs_cubit/users_cubit.dart';
 
 abstract class GifsDependencyInjector {
@@ -21,6 +22,7 @@ abstract class GifsDependencyInjector {
       DIManager.getIt<HttpImpl>(),
       RemoteApiConstants.getTrendGifs,
       RemoteApiConstants.apiKeyGiphy,
+      RemoteApiConstants.getSearchGifs,
     ));
 
     DIManager.getIt.registerSingleton<GifsDataContract>(
@@ -30,14 +32,21 @@ abstract class GifsDependencyInjector {
     );
 
     DIManager.getIt.registerSingleton(
-      GetGifsUseCase(
+      GetTrendGifsUseCase(
+        DIManager.getIt<GifsDataContract>(),
+      ),
+    );
+
+    DIManager.getIt.registerSingleton(
+      GetSearchGifUseCase(
         DIManager.getIt<GifsDataContract>(),
       ),
     );
 
     DIManager.getIt.registerFactory(
       () => GifCubit(
-        getAllPostsUseCase: DIManager.getIt<GetGifsUseCase>(),
+        getAllPostsUseCase: DIManager.getIt<GetTrendGifsUseCase>(),
+        getSearchGifUseCase: DIManager.getIt<GetSearchGifUseCase>(),
       ),
     );
 
