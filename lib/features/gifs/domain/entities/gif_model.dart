@@ -2,7 +2,7 @@
 //
 //     final gifModel = gifModelFromJson(jsonString);
 
-// ignore_for_file: unnecessary_lambdas
+// ignore_for_file: unnecessary_lambdas, constant_identifier_names, duplicate_ignore
 
 import 'dart:convert';
 
@@ -92,32 +92,28 @@ class GifModelBase {
 
   factory GifModelBase.fromJson(Map<String, dynamic> json) => GifModelBase(
         type: json['type'] = typeValues.map![json['type']],
-        id: json['id'] == null ? null : json['id'],
-        url: json['url'] == null ? null : json['url'],
-        slug: json['slug'] == null ? null : json['slug'],
-        bitlyGifUrl:
-            json['bitly_gif_url'] == null ? null : json['bitly_gif_url'],
-        bitlyUrl: json['bitly_url'] == null ? null : json['bitly_url'],
-        embedUrl: json['embed_url'] == null ? null : json['embed_url'],
-        username: json['username'] == null ? null : json['username'],
-        source: json['source'] == null ? null : json['source'],
-        title: json['title'] == null ? null : json['title'],
+        id: json['id'],
+        url: json['url'],
+        slug: json['slug'],
+        bitlyGifUrl: json['bitly_gif_url'],
+        bitlyUrl: json['bitly_url'],
+        embedUrl: json['embed_url'],
+        username: json['username'],
+        source: json['source'],
+        title: json['title'],
         rating:
             json['rating'] == null ? null : ratingValues.map![json['rating']],
-        contentUrl: json['content_url'] == null ? null : json['content_url'],
-        sourceTld: json['source_tld'] == null ? null : json['source_tld'],
-        sourcePostUrl:
-            json['source_post_url'] == null ? null : json['source_post_url'],
-        isSticker: json['is_sticker'] == null ? null : json['is_sticker'],
+        contentUrl: json['content_url'],
+        sourceTld: json['source_tld'],
+        sourcePostUrl: json['source_post_url'],
+        isSticker: json['is_sticker'],
         importDatetime: json['import_datetime'] == null
             ? null
             : DateTime.parse(json['import_datetime']),
         trendingDatetime: json['trending_datetime'],
         images: json['images'] == null ? null : Images.fromJson(json['images']),
         user: json['user'] == null ? null : User.fromJson(json['user']),
-        analyticsResponsePayload: json['analytics_response_payload'] == null
-            ? null
-            : json['analytics_response_payload'],
+        analyticsResponsePayload: json['analytics_response_payload'],
         analytics: json['analytics'] == null
             ? null
             : Analytics.fromJson(json['analytics']),
@@ -125,27 +121,26 @@ class GifModelBase {
 
   Map<String, dynamic> toJson() => {
         'type': type == null ? null : typeValues.reverse![type],
-        'id': id == null ? null : id,
-        'url': url == null ? null : url,
-        'slug': slug == null ? null : slug,
-        'bitly_gif_url': bitlyGifUrl == null ? null : bitlyGifUrl,
-        'bitly_url': bitlyUrl == null ? null : bitlyUrl,
-        'embed_url': embedUrl == null ? null : embedUrl,
-        'username': username == null ? null : username,
-        'source': source == null ? null : source,
-        'title': title == null ? null : title,
+        'id': id,
+        'url': url,
+        'slug': slug,
+        'bitly_gif_url': bitlyGifUrl,
+        'bitly_url': bitlyUrl,
+        'embed_url': embedUrl,
+        'username': username,
+        'source': source,
+        'title': title,
         'rating': rating == null ? null : ratingValues.reverse![rating],
-        'content_url': contentUrl == null ? null : contentUrl,
-        'source_tld': sourceTld == null ? null : sourceTld,
-        'source_post_url': sourcePostUrl ?? null,
-        'is_sticker': isSticker == null ? null : isSticker,
+        'content_url': contentUrl,
+        'source_tld': sourceTld,
+        'source_post_url': sourcePostUrl,
+        'is_sticker': isSticker,
         'import_datetime':
             importDatetime == null ? null : importDatetime!.toIso8601String(),
         'trending_datetime': trendingDatetime,
         'images': images == null ? null : images!.toJson(),
         'user': user == null ? null : user!.toJson(),
-        'analytics_response_payload':
-            analyticsResponsePayload == null ? null : analyticsResponsePayload,
+        'analytics_response_payload': analyticsResponsePayload,
         'analytics': analytics == null ? null : analytics!.toJson(),
       };
 }
@@ -185,11 +180,11 @@ class Onclick {
   String? url;
 
   factory Onclick.fromJson(Map<String, dynamic> json) => Onclick(
-        url: json['url'] == null ? null : json['url'],
+        url: json['url'],
       );
 
   Map<String, dynamic> toJson() => {
-        'url': url == null ? null : url,
+        'url': url,
       };
 }
 
@@ -378,17 +373,17 @@ class The480WStill {
   String? url;
 
   factory The480WStill.fromJson(Map<String, dynamic> json) => The480WStill(
-        height: json['height'] == null ? null : json['height'],
-        width: json['width'] == null ? null : json['width'],
-        size: json['size'] == null ? null : json['size'],
-        url: json['url'] == null ? null : json['url'],
+        height: json['height'],
+        width: json['width'],
+        size: json['size'],
+        url: json['url'],
       );
 
   Map<String, dynamic> toJson() => {
-        'height': height == null ? null : height,
-        'width': width == null ? null : width,
-        'size': size == null ? null : size,
-        'url': url == null ? null : url,
+        'height': height,
+        'width': width,
+        'size': size,
+        'url': url,
       };
 }
 
@@ -406,17 +401,17 @@ class The4K {
   String? mp4;
 
   factory The4K.fromJson(Map<String, dynamic> json) => The4K(
-        height: json['height'] == null ? null : json['height'],
-        width: json['width'] == null ? null : json['width'],
-        mp4Size: json['mp4_size'] == null ? null : json['mp4_size'],
-        mp4: json['mp4'] == null ? null : json['mp4'],
+        height: json['height'],
+        width: json['width'],
+        mp4Size: json['mp4_size'],
+        mp4: json['mp4'],
       );
 
   Map<String, dynamic> toJson() => {
-        'height': height == null ? null : height,
-        'width': width == null ? null : width,
-        'mp4_size': mp4Size == null ? null : mp4Size,
-        'mp4': mp4 == null ? null : mp4,
+        'height': height,
+        'width': width,
+        'mp4_size': mp4Size,
+        'mp4': mp4,
       };
 }
 
@@ -446,29 +441,29 @@ class FixedHeight {
   String? hash;
 
   factory FixedHeight.fromJson(Map<String, dynamic> json) => FixedHeight(
-        height: json['height'] == null ? null : json['height'],
-        width: json['width'] == null ? null : json['width'],
-        size: json['size'] == null ? null : json['size'],
-        url: json['url'] == null ? null : json['url'],
-        mp4Size: json['mp4_size'] == null ? null : json['mp4_size'],
-        mp4: json['mp4'] == null ? null : json['mp4'],
-        webpSize: json['webp_size'] == null ? null : json['webp_size'],
-        webp: json['webp'] == null ? null : json['webp'],
-        frames: json['frames'] == null ? null : json['frames'],
-        hash: json['hash'] == null ? null : json['hash'],
+        height: json['height'],
+        width: json['width'],
+        size: json['size'],
+        url: json['url'],
+        mp4Size: json['mp4_size'],
+        mp4: json['mp4'],
+        webpSize: json['webp_size'],
+        webp: json['webp'],
+        frames: json['frames'],
+        hash: json['hash'],
       );
 
   Map<String, dynamic> toJson() => {
-        'height': height == null ? null : height,
-        'width': width == null ? null : width,
-        'size': size == null ? null : size,
-        'url': url == null ? null : url,
-        'mp4_size': mp4Size == null ? null : mp4Size,
-        'mp4': mp4 == null ? null : mp4,
-        'webp_size': webpSize == null ? null : webpSize,
-        'webp': webp == null ? null : webp,
-        'frames': frames == null ? null : frames,
-        'hash': hash == null ? null : hash,
+        'height': height,
+        'width': width,
+        'size': size,
+        'url': url,
+        'mp4_size': mp4Size,
+        'mp4': mp4,
+        'webp_size': webpSize,
+        'webp': webp,
+        'frames': frames,
+        'hash': hash,
       };
 }
 
@@ -482,16 +477,17 @@ class Looping {
   String? mp4;
 
   factory Looping.fromJson(Map<String, dynamic> json) => Looping(
-        mp4Size: json['mp4_size'] == null ? null : json['mp4_size'],
-        mp4: json['mp4'] == null ? null : json['mp4'],
+        mp4Size: json['mp4_size'],
+        mp4: json['mp4'],
       );
 
   Map<String, dynamic> toJson() => {
-        'mp4_size': mp4Size == null ? null : mp4Size,
-        'mp4': mp4 == null ? null : mp4,
+        'mp4_size': mp4Size,
+        'mp4': mp4,
       };
 }
 
+// ignore: constant_identifier_names
 enum Rating { G, PG }
 
 final ratingValues = EnumValues({'g': Rating.G, 'pg': Rating.PG});
@@ -531,30 +527,29 @@ class User {
   bool? isVerified;
 
   factory User.fromJson(Map<String, dynamic> json) => User(
-        avatarUrl: json['avatar_url'] == null ? null : json['avatar_url'],
-        bannerImage: json['banner_image'] == null ? null : json['banner_image'],
-        bannerUrl: json['banner_url'] == null ? null : json['banner_url'],
-        profileUrl: json['profile_url'] == null ? null : json['profile_url'],
-        username: json['username'] == null ? null : json['username'],
-        displayName: json['display_name'] == null ? null : json['display_name'],
-        description: json['description'] == null ? null : json['description'],
-        instagramUrl:
-            json['instagram_url'] == null ? null : json['instagram_url'],
-        websiteUrl: json['website_url'] == null ? null : json['website_url'],
-        isVerified: json['is_verified'] == null ? null : json['is_verified'],
+        avatarUrl: json['avatar_url'],
+        bannerImage: json['banner_image'],
+        bannerUrl: json['banner_url'],
+        profileUrl: json['profile_url'],
+        username: json['username'],
+        displayName: json['display_name'],
+        description: json['description'],
+        instagramUrl: json['instagram_url'],
+        websiteUrl: json['website_url'],
+        isVerified: json['is_verified'],
       );
 
   Map<String, dynamic> toJson() => {
-        'avatar_url': avatarUrl == null ? null : avatarUrl,
-        'banner_image': bannerImage == null ? null : bannerImage,
-        'banner_url': bannerUrl == null ? null : bannerUrl,
-        'profile_url': profileUrl == null ? null : profileUrl,
-        'username': username == null ? null : username,
-        'display_name': displayName == null ? null : displayName,
-        'description': description == null ? null : description,
-        'instagram_url': instagramUrl == null ? null : instagramUrl,
-        'website_url': websiteUrl == null ? null : websiteUrl,
-        'is_verified': isVerified == null ? null : isVerified,
+        'avatar_url': avatarUrl,
+        'banner_image': bannerImage,
+        'banner_url': bannerUrl,
+        'profile_url': profileUrl,
+        'username': username,
+        'display_name': displayName,
+        'description': description,
+        'instagram_url': instagramUrl,
+        'website_url': websiteUrl,
+        'is_verified': isVerified,
       };
 }
 
@@ -570,15 +565,15 @@ class Meta {
   String? responseId;
 
   factory Meta.fromJson(Map<String, dynamic> json) => Meta(
-        status: json['status'] == null ? null : json['status'],
-        msg: json['msg'] == null ? null : json['msg'],
-        responseId: json['response_id'] == null ? null : json['response_id'],
+        status: json['status'],
+        msg: json['msg'],
+        responseId: json['response_id'],
       );
 
   Map<String, dynamic> toJson() => {
-        'status': status == null ? null : status,
-        'msg': msg == null ? null : msg,
-        'response_id': responseId == null ? null : responseId,
+        'status': status,
+        'msg': msg,
+        'response_id': responseId,
       };
 }
 
@@ -594,15 +589,15 @@ class Pagination {
   int? offset;
 
   factory Pagination.fromJson(Map<String, dynamic> json) => Pagination(
-        totalCount: json['total_count'] == null ? null : json['total_count'],
-        count: json['count'] == null ? null : json['count'],
-        offset: json['offset'] == null ? null : json['offset'],
+        totalCount: json['total_count'],
+        count: json['count'],
+        offset: json['offset'],
       );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount == null ? null : totalCount,
-        'count': count == null ? null : count,
-        'offset': offset == null ? null : offset,
+        'total_count': totalCount,
+        'count': count,
+        'offset': offset,
       };
 }
 
@@ -613,9 +608,8 @@ class EnumValues<T> {
   EnumValues(this.map);
 
   Map<T, String>? get reverse {
-    if (reverseMap == null) {
-      reverseMap = map!.map((k, v) => new MapEntry(v, k));
-    }
+    // ignore: join_return_with_assignment
+    reverseMap ??= map!.map((k, v) => MapEntry(v, k));
     return reverseMap;
   }
 }

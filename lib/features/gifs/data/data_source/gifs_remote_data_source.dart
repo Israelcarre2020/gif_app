@@ -12,7 +12,6 @@ class GifsRemoteDatasource {
     final http = _httpImpl.instance();
     final params = {'api_key': _giphtToken};
     final response = await http.get(_giphyUrl, queryParameters: params);
-    final model = GifAllDataModel.fromJson(response.data);
-    return model.data!;
+    return GifAllDataModel.fromJson(response.data).data!;
   }
 }
