@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../../../../core/di_manager/di_manager.dart';
-import '../../../../../shared/theme/app_colors_theme.dart';
-import '../../../domain/entities/gif_model.dart';
 import '../../../domain/use_cases/get_search_gifs_use_case.dart';
 import '../../../domain/use_cases/get_trend_gifs_use_case.dart';
 import '../../manager/gifs_cubit/gifs_cubit.dart';
 import '../../widgets/body_widget.dart';
-import '../../widgets/custom_card.dart';
 
 class ListGifPage extends StatelessWidget {
   const ListGifPage({super.key});
