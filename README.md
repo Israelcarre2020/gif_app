@@ -2,6 +2,9 @@
 
 ## Flutter version: 3.7
 
+# Apk release:
+[Download](https://drive.google.com/file/d/1T0gGKcSe7ITi9SuxyDMw8SwlEyxCLO7M/view?usp=share_link)
+
 # Capturas de pantalla
 
 ## Android
