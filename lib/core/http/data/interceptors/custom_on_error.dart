@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 Future<DioError> customOnError(DioError dioError) async {
   if (dioError.type == DioErrorType.connectTimeout) {
     return _customReportError(dioError,
-        'En estos momentos estamos trabajando en cambios, intenta volver a recargar los datos');
+        'La conexión se encuentra muy lenta en este momento, intenta más tarde');
   }
 
   if (dioError.error is SocketException) {
@@ -22,7 +22,8 @@ Future<DioError> customOnError(DioError dioError) async {
     case 404:
       return _customReportError(dioError, 'No se ha encontrado nada');
     case 500:
-      return _customReportError(dioError, 'Tuvimos un error en el servidor');
+      return _customReportError(
+          dioError, 'Hay un problema en el servidor de gifs');
     default:
       return dioError;
   }
