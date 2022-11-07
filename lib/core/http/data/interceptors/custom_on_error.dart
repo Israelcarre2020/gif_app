@@ -18,7 +18,7 @@ Future<DioError> customOnError(DioError dioError) async {
       return _customReportError(
           dioError, 'Peticion mal hecha, intentalo de nuevo');
     case 401:
-      return _customReportError(dioError, 'No tienes permiso');
+      return _customReportError(dioError, 'El token no es válido');
     case 404:
       return _customReportError(dioError, 'No se ha encontrado nada');
     case 500:

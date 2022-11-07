@@ -1,4 +1,4 @@
-part of 'users_cubit.dart';
+part of 'gifs_cubit.dart';
 
 @freezed
 abstract class GifState with _$GifState {
