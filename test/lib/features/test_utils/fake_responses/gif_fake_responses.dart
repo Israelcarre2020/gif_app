@@ -1,3 +1,5 @@
+// ignore_for_file: use_raw_strings
+
 import 'package:summer_app/features/gifs/domain/entities/gif_model.dart';
 
 final gifsFakeResponseTrend = {
