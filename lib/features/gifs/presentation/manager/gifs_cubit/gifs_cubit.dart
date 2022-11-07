@@ -9,16 +9,16 @@ import '../../../domain/use_cases/get_search_gifs_use_case.dart';
 import '../../../domain/use_cases/get_trend_gifs_use_case.dart';
 
 part 'gifs_cubit_state.dart';
-part 'users_cubit.freezed.dart';
+part 'gifs_cubit.freezed.dart';
 
 class GifCubit extends Cubit<GifState> {
   final GetTrendGifsUseCase _getTrendGifsUseCase;
   final GetSearchGifUseCase _getSearchGifUseCase;
 
   GifCubit({
-    required GetTrendGifsUseCase getAllPostsUseCase,
+    required GetTrendGifsUseCase getTrendsUseCase,
     required GetSearchGifUseCase getSearchGifUseCase,
-  })  : _getTrendGifsUseCase = getAllPostsUseCase,
+  })  : _getTrendGifsUseCase = getTrendsUseCase,
         _getSearchGifUseCase = getSearchGifUseCase,
         super(const GifState.loading());
 

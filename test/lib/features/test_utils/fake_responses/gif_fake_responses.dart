@@ -1,3 +1,5 @@
+import 'package:summer_app/features/gifs/domain/entities/gif_model.dart';
+
 final gifsFakeResponseTrend = {
   'data': [
     {
@@ -24631,3 +24633,6 @@ final gifsFakeResponseSearch = {
     'response_id': 'ue8uxw53rntyrwxn18b2ex0o7jwrzo80xl6k4h4o'
   }
 };
+
+final List<GifModelBase> listTrendFake = [];
+final List<GifModelBase> listSearchFake = [];

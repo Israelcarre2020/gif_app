@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/di_manager/di_manager.dart';
 import '../../../domain/use_cases/get_search_gifs_use_case.dart';
 import '../../../domain/use_cases/get_trend_gifs_use_case.dart';
-import '../../manager/gifs_cubit/users_cubit.dart';
+import '../../manager/gifs_cubit/gifs_cubit.dart';
 import '../../widgets/body_widget.dart';
 
 class ListGifPage extends StatelessWidget {
@@ -14,22 +14,22 @@ class ListGifPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GifCubit(
-        getAllPostsUseCase: DIManager.getIt<GetTrendGifsUseCase>(),
+        getTrendsUseCase: DIManager.getIt<GetTrendGifsUseCase>(),
         getSearchGifUseCase: DIManager.getIt<GetSearchGifUseCase>(),
       ),
-      child: const UsersListPageView(),
+      child: const GifsListPageView(),
     );
   }
 }
 
-class UsersListPageView extends StatefulWidget {
-  const UsersListPageView({super.key});
+class GifsListPageView extends StatefulWidget {
+  const GifsListPageView({super.key});
 
   @override
-  State<UsersListPageView> createState() => _UsersListPageViewState();
+  State<GifsListPageView> createState() => _GifsListPageViewState();
 }
 
-class _UsersListPageViewState extends State<UsersListPageView> {
+class _GifsListPageViewState extends State<GifsListPageView> {
   final searchController = TextEditingController();
 
   @override

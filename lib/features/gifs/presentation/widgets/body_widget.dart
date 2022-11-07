@@ -4,7 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../../../shared/theme/app_colors_theme.dart';
 import '../../domain/entities/gif_model.dart';
-import '../manager/gifs_cubit/users_cubit.dart';
+import '../manager/gifs_cubit/gifs_cubit.dart';
 import 'custom_card.dart';
 
 class BodyWidgetGifs extends StatelessWidget {
