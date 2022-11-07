@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../domain/entities/gif_model.dart';
@@ -16,13 +17,15 @@ class CustomCard extends StatelessWidget {
       padding: const EdgeInsets.all(7),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
-        child: FadeInImage.assetNetwork(
-            width: width * 0.4,
-            height: double.parse(gif.images!.original!.height!),
+        child: CachedNetworkImage(
             fit: BoxFit.cover,
-            placeholderFit: BoxFit.cover,
-            placeholder: 'assets/images/loading.gif',
-            image: gif.images!.original!.url!),
+            height: double.parse(gif.images!.original!.height!),
+            width: width * 0.4,
+            progressIndicatorBuilder: (context, url, downloadProgress) =>
+                Center(
+                    child: CircularProgressIndicator(
+                        value: downloadProgress.progress)),
+            imageUrl: gif.images!.original!.url!),
       ),
     );
   }

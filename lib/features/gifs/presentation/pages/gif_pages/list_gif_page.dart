@@ -62,46 +62,39 @@ class _GifsListPageViewState extends State<GifsListPageView> {
             orElse: () {},
           );
         }, builder: (_, state) {
-          return state.maybeWhen(loading: () {
-            return BodyWidgetGifs(
-                gifList: context.read<GifCubit>().allGifs,
-                theme: theme,
-                state: state,
-                textController: searchController);
-          }, trendGifs: (trendGifs) {
-            return BodyWidgetGifs(
-                gifList: trendGifs,
-                theme: theme,
-                state: state,
-                textController: searchController);
-          }, searchedGifs: (searchedGifs) {
-            return BodyWidgetGifs(
-                gifList: searchedGifs,
-                theme: theme,
-                state: state,
-                textController: searchController);
-          }, error: (error) {
-            return Center(
-              child: _refresh(context),
-            );
-          }, orElse: () {
-            return BodyWidgetGifs(
-                gifList: context.read<GifCubit>().allGifs,
-                theme: theme,
-                state: state,
-                textController: searchController);
-          });
+          return state.maybeWhen(
+              loading: () => BodyWidgetGifs(
+                  gifList: context.read<GifCubit>().allGifs,
+                  theme: theme,
+                  state: state,
+                  textController: searchController),
+              trendGifs: (trendGifs) => BodyWidgetGifs(
+                  gifList: trendGifs,
+                  theme: theme,
+                  state: state,
+                  textController: searchController),
+              searchedGifs: (searchedGifs) => BodyWidgetGifs(
+                  gifList: searchedGifs,
+                  theme: theme,
+                  state: state,
+                  textController: searchController),
+              error: (error) => Center(
+                    child: _refresh(context),
+                  ),
+              orElse: () => BodyWidgetGifs(
+                  gifList: context.read<GifCubit>().allGifs,
+                  theme: theme,
+                  state: state,
+                  textController: searchController));
         }));
   }
 
-  Widget _refresh(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        TextButton(
-            onPressed: () => context.read<GifCubit>().getTrendGifs(),
-            child: const Text('Cargar nuevamente')),
-      ],
-    );
-  }
+  Widget _refresh(BuildContext context) => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextButton(
+              onPressed: () => context.read<GifCubit>().getTrendGifs(),
+              child: const Text('Cargar nuevamente')),
+        ],
+      );
 }

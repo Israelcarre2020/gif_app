@@ -67,31 +67,29 @@ class BodyWidgetGifs extends StatelessWidget {
     );
   }
 
-  Widget _searchGifField(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: TextField(
-        controller: textController,
-        decoration: InputDecoration(
-          suffixIcon: IconButton(
-              onPressed: textController.clear,
-              icon: const Icon(
-                Icons.clear,
-                size: 30,
-              )),
-          prefixIcon: IconButton(
-              onPressed: () async {
-                await context.read<GifCubit>().searchGif(textController.text);
-              },
-              icon: const Icon(
-                Icons.search,
-                size: 30,
-              )),
-          border: const OutlineInputBorder(),
-          contentPadding: const EdgeInsets.all(5),
-          hintText: 'Buscar Gif',
+  Widget _searchGifField(BuildContext context) => Padding(
+        padding: const EdgeInsets.all(10),
+        child: TextField(
+          controller: textController,
+          decoration: InputDecoration(
+            suffixIcon: IconButton(
+                onPressed: textController.clear,
+                icon: const Icon(
+                  Icons.clear,
+                  size: 30,
+                )),
+            prefixIcon: IconButton(
+                onPressed: () async {
+                  await context.read<GifCubit>().searchGif(textController.text);
+                },
+                icon: const Icon(
+                  Icons.search,
+                  size: 30,
+                )),
+            border: const OutlineInputBorder(),
+            contentPadding: const EdgeInsets.all(5),
+            hintText: 'Buscar Gif',
+          ),
         ),
-      ),
-    );
-  }
+      );
 }
