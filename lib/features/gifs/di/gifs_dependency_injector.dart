@@ -6,7 +6,7 @@ import '../data/repositories/gifs_impl_repository.dart';
 import '../domain/repositories/get_data_gifs_contract.dart';
 import '../domain/use_cases/get_search_gifs_use_case.dart';
 import '../domain/use_cases/get_trend_gifs_use_case.dart';
-import '../presentation/manager/gifs_cubit/users_cubit.dart';
+import '../presentation/manager/gifs_cubit/gifs_cubit.dart';
 
 abstract class GifsDependencyInjector {
   static bool _alreadyInit = false;
@@ -45,7 +45,7 @@ abstract class GifsDependencyInjector {
 
     DIManager.getIt.registerFactory(
       () => GifCubit(
-        getAllPostsUseCase: DIManager.getIt<GetTrendGifsUseCase>(),
+        getTrendsUseCase: DIManager.getIt<GetTrendGifsUseCase>(),
         getSearchGifUseCase: DIManager.getIt<GetSearchGifUseCase>(),
       ),
     );

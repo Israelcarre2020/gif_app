@@ -4,7 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../../../shared/theme/app_colors_theme.dart';
 import '../../domain/entities/gif_model.dart';
-import '../manager/gifs_cubit/users_cubit.dart';
+import '../manager/gifs_cubit/gifs_cubit.dart';
 import 'custom_card.dart';
 
 class BodyWidgetGifs extends StatelessWidget {
@@ -67,31 +67,29 @@ class BodyWidgetGifs extends StatelessWidget {
     );
   }
 
-  Widget _searchGifField(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: TextField(
-        controller: textController,
-        decoration: InputDecoration(
-          suffixIcon: IconButton(
-              onPressed: textController.clear,
-              icon: const Icon(
-                Icons.clear,
-                size: 30,
-              )),
-          prefixIcon: IconButton(
-              onPressed: () async {
-                await context.read<GifCubit>().searchGif(textController.text);
-              },
-              icon: const Icon(
-                Icons.search,
-                size: 30,
-              )),
-          border: const OutlineInputBorder(),
-          contentPadding: const EdgeInsets.all(5),
-          hintText: 'Buscar Gif',
+  Widget _searchGifField(BuildContext context) => Padding(
+        padding: const EdgeInsets.all(10),
+        child: TextField(
+          controller: textController,
+          decoration: InputDecoration(
+            suffixIcon: IconButton(
+                onPressed: textController.clear,
+                icon: const Icon(
+                  Icons.clear,
+                  size: 30,
+                )),
+            prefixIcon: IconButton(
+                onPressed: () async {
+                  await context.read<GifCubit>().searchGif(textController.text);
+                },
+                icon: const Icon(
+                  Icons.search,
+                  size: 30,
+                )),
+            border: const OutlineInputBorder(),
+            contentPadding: const EdgeInsets.all(5),
+            hintText: 'Buscar Gif',
+          ),
         ),
-      ),
-    );
-  }
+      );
 }
