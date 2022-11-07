@@ -1,3 +1,5 @@
+___"Tienes que aprender a aprovechar la tecnología para poder usarla para cosas positivas sin estar desconectado de la naturaleza.-Talib Kweli."___
+
 # GiF  APP 
 
 ## Flutter version: 3.7
@@ -16,3 +18,4 @@
 
 ## Web
 ![ezgif com-gif-maker (9)](https://user-images.githubusercontent.com/67708594/200344444-fc244103-779f-46df-856a-3fd7fdec6861.gif)
+
