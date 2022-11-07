@@ -59,9 +59,6 @@ class GifCubit extends Cubit<GifState> {
     if (value.isNotEmpty) {
       await searchGifs(value);
       title = value;
-    } else {
-      await getTrendGifs();
-      emit(GifState.trendGifs(allGifs));
     }
   }
 }
