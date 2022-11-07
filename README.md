@@ -1,16 +1,15 @@
-# sumer_app
+# GiF  APP 
 
-A new Flutter project.
+## Flutter version: 3.7
 
-## Getting Started
+# Capturas de pantalla
 
-This project is a starting point for a Flutter application.
+## Android
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/67708594/200338467-203ac475-d223-4667-bf1b-9ff46bb2bcc2.gif)
 
-A few resources to get you started if this is your first Flutter project:
+## iOS
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Web
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/67708594/200339010-e4cca913-969e-4a41-934b-97ae0a8b2791.gif)
+
